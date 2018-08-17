@@ -1,1 +1,2 @@
 # Department_Workflow_Mangement
+This is like an API portal. Upload JSON files as Exported reports from any system. This Web App will CRUD from the JSON file to a Table view that is very SEARCHABLE and as CRUD operations in each row. Finally you can upload CSV data from the concole application and see Metric trends right in the Web apps final Reporting Tab. Thus, you can arcive daily, weekly and yearly activity for each team and or department all in one Web App, The Department workflow Management Application.
