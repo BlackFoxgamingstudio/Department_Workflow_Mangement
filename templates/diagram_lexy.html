@@ -1,0 +1,72 @@
+
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex">
+ 
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
+     
+  
+            <div class="card">
+          <!-- <iframe src="/support/diagrams" style="height: 250px" frameborder="0"></iframe> -->
+
+            <div class="card-block pull-right col-sm-6">
+                 {% include 'codec.html' %}
+              </div>
+          <div class="card-block pull-left col-sm-6">
+            <h4 class="card-title">id: {{dig[num].id}}</h4>
+            <table class="list-group col-md-12">
+              <tr class="list-group-item">
+                <td><b>vertex: </b></b> {{dig[num].vertex}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              </tr>
+              <tr class="list-group-item">
+                <td><b>parent:</b> {{dig[num].parent}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              </tr>
+              <tr class="list-group-item">
+                <td><b>value:</b> {{dig[num].value}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              </tr>
+              <tr class="list-group-item">
+                <td><b>X:</b> {{dig[num].mxGeometry.x}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              </tr>
+              <tr class="list-group-item">
+                <td><b>Y:</b> {{dig[num].mxGeometry.y}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              </tr>
+              <tr class="list-group-item">
+                <td><b>Width: </b> <a href='{{data[num].DOCS}}'/>{{dig[num].mxGeometry.width}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              
+              </tr>
+              <tr class="list-group-item">
+                <td><b>Height: </b> <a href='{{data[num].DOCS}}'/> {{dig[num].mxGeometry.height}} </td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              
+              </tr>
+              <tr class="list-group-item">
+                <td><b>as:  </b> <a href='{{data[num].DOCS}}'/>{{dig[num].mxGeometry.as}}</td>
+                <td><a href="#" class="badge badge-danger pull-right">update</a></td>
+              
+              </tr>
+              </table>
+              
+          </div>
+        </div>
+
+
+  
+  
+  
+
+
+ 
+ 
