@@ -1,0 +1,39 @@
+ </script>
+         <script type='text/javascript'>
+    $(window).load(function(){
+      var data = {{data|tojson}};
+      var columns = {{columns|tojson}};
+      $(function() {
+        $('#table').bootstrapTable({ 
+          data: data,
+          columns: columns,
+        });
+      });
+    });
+  </script>              
+
+  
+  
+    <div id="toolbar"></div>
+    <table
+      id="table"
+      data-toggle="true"
+      data-toolbar="#toolbar"
+      data-search="true"
+      data-show-columns="true"
+      data-pagination="true"
+      data-height="400"
+      data-width="100">
+<thead>
+      <tr>
+<th data-field = "id" data-formatter="yourFormatter"> </th>
+</tr>
+</thead>
+     
+    </table>
+ <script>
+function yourFormatter(value) {
+return ' <form action="" method="post" id={{data.ID}}>{{ form.csrf }}<div class="input text">{{ form.name.label }} {{ form.name }}{{ form.ID.label }} {{ form.ID }}{{ form.topic.label }} {{ form.topic }}{{ form.deviceversion.label }} {{ form.deviceversion }}</div><div class="input submit"><input type="submit" value="Submit" />{{data.ID}}</div></form>';
+}
+</script>
+        
