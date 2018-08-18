@@ -33,7 +33,7 @@
     </table>
  <script>
 function yourFormatter(value) {
-return ' <form action="" method="post" id={{data.ID}}>{{ form.csrf }}<div class="input text">{{ form.name.label }} {{ form.name }}{{ form.ID.label }} {{ form.ID }}{{ form.topic.label }} {{ form.topic }}{{ form.deviceversion.label }} {{ form.deviceversion }}</div><div class="input submit"><input type="submit" value="Submit" />{{data.ID}}</div></form>';
+return ' <form action="" method="post" id={{data.ID}}>{{ form.csrf }}<div class="input text"><center><b>Enter Id of this row</b></center><br>{{ form.ID.label }} {{ form.ID }}<center><b>__edit__</b><br></center>{{ form.name.label }} {{ form.name }}{{ form.topic.label }} {{ form.topic }}{{ form.deviceversion.label }} {{ form.deviceversion }}</div><div class="input submit"><input type="submit" value="Submit" /></div></form>';
 }
 </script>
         
