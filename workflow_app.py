@@ -42,7 +42,7 @@ import requests
 import random
 import string
 from flask import Flask, render_template, flash, request
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from wtforms import Form, TextField, IntegerField, TextAreaField, validators, StringField, SubmitField
  
 DEBUG = True
 app = Flask(__name__)
@@ -169,7 +169,7 @@ def showdiagrams():
 # Profile per Id
 class ReusableForm(Form):
     name = TextField('Name:', validators=[validators.required()])
-    ID = TextField('ID:', validators=[validators.required()])
+    ID = IntegerField('ID:')
     topic = TextField('topic:', validators=[validators.required()])
     deviceversion = TextField('deviceversion:')
     issue = TextField('issue:')
@@ -206,21 +206,22 @@ def get_data(data_ID):
 
     if request.method == 'POST':
         name=request.form['name']
-        ID=request.form['ID']
+        ID= int(request.form['ID']) 
         topic=request.form['topic']
 
         with open('static/data/usecase.json', "r+") as jsonfile:
             update = json.load(jsonfile)
-            row = data_ID - 1
+            row = ID - 1
+           
 
-            tmp = update[0]["SUBJECT"]
-            update[0]["SUBJECT"] = name
+            tmp = update[row]["SUBJECT"]
+            update[row]["SUBJECT"] = name
             jsonfile.seek(0)  # rewind
-            tmp2 = update[0]["ID"]
-            update[0]['ID'] = ID
+            tmp2 = update[row]["ID"]
+            update[row]['ID'] = ID
             jsonfile.seek(0)  # rewind
-            tmp3 = update[0]["TOPIC"]
-            update[0]["TOPIC"] = topic
+            tmp3 = update[row]["TOPIC"]
+            update[row]["TOPIC"] = topic
 
             jsonfile.seek(0)  # rewind
             json.dump(update, jsonfile)
